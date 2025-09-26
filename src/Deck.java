@@ -67,4 +67,5 @@ public class Deck {
     int getPoint(int id){ return 0;}
     
     String getName(int id){ return names[id];}
+
 }
