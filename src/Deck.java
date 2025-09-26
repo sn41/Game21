@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Deck {
     boolean[] exists = new boolean[36];
     
@@ -55,12 +57,14 @@ public class Deck {
             exists[i] = true;
         }
     }
-    
+
+    private Random rand = new Random();
+
     int get(){
-        return 0;
+        return rand.nextInt(0,36);
     }
     
     int getPoint(int id){ return 0;}
     
-    String getName(int id){ return "";}
+    String getName(int id){ return names[id];}
 }
