@@ -54,14 +54,20 @@ public class Deck {
     
     {
         for (int i = 0; i < 36; i++) {
-            exists[i] = true;
+            exists[35] = true;
         }
     }
 
     private Random rand = new Random();
 
     int get(){
-        return rand.nextInt(0,36);
+        while(true){
+            int i = rand.nextInt(0,36);
+            if (exists[i]) {
+                exists[i] = false;
+                return i;
+            }
+        }
     }
     
     int getPoint(int id){ return 0;}
