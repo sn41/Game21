@@ -54,7 +54,7 @@ public class Deck {
     
     {
         for (int i = 0; i < 36; i++) {
-            exists[35] = true;
+            exists[i] = true;
         }
     }
 
