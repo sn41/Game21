@@ -3,32 +3,66 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Deck deck = new Deck();
+        Scanner input = new Scanner(System.in);
 
-
-        Scanner scanner = new Scanner(System.in);
-
+        int sum = 0;
 
         //вытягиваем карту
 //        int id = deck.get();
+//        sum = sum + deck.getPoint(id);
 //        String name = deck.getName(id);
-//        System.out.println(name);
+//        System.out.println(sum + "\t" + name);
+//        if(sum > 21) {System.out.println("Вы проиграли!!");}
+        sum = fun(deck, sum, input);
 
-        getCard(deck);
-        scanner.nextLine();
+//        System.out.println("Ещё?");
+//        input.nextLine();
+//
+//        id = deck.get();
+//        sum = sum + deck.getPoint(id);
+//        name = deck.getName(id);
+//        System.out.println(sum + "\t" + name);
+//        if(sum > 21) {System.out.println("Вы проиграли!!");}
 
-        getCard(deck);
-        scanner.nextLine();
+        sum = fun(deck, sum, input);
 
-        getCard(deck);
-        scanner.nextLine();
+//        System.out.println("Ещё?");
+//        input.nextLine();
+//
+//        id = deck.get();
+//        sum = sum + deck.getPoint(id);
+//        name = deck.getName(id);
+//        System.out.println(sum + "\t" + name);
+//        if(sum > 21) {System.out.println("Вы проиграли!!");}
 
-        scanner.close();
+        sum = fun(deck, sum, input);
+
+//        System.out.println("Ещё?");
+//        input.nextLine();
+//
+//
+//        id = deck.get();
+//        sum = sum + deck.getPoint(id);
+//        name = deck.getName(id);
+//        System.out.println(sum + "\t" + name);
+//        if(sum > 21) {System.out.println("Вы проиграли!!");}
+//
+//        System.out.println("Ещё?");
+//        input.nextLine();
+
+        sum = fun(deck, sum, input);
     }
 
-    private static void getCard(Deck deck){
+    private static int fun(Deck deck, int sum, Scanner input) {
         int id = deck.get();
+        sum = sum + deck.getPoint(id);
         String name = deck.getName(id);
-        System.out.println(name);
-        System.out.println("Нажмите Enter для продолжения...");
+        System.out.println(sum + "\t" + name);
+        if(sum > 21) {System.out.println("Вы проиграли!!");}
+
+        System.out.println("Ещё?");
+        input.nextLine();
+
+        return sum;
     }
 }
