@@ -3,12 +3,14 @@ import java.util.Random;
 public class Deck {
     boolean[] exists = new boolean[36];
 
-    int[] points = {
-            6, 7, 8, 9, 10, 4, 3, 2, 1,
-            6, 7, 8, 9, 10, 4, 3, 2, 1,
-            6, 7, 8, 9, 10, 4, 3, 2, 1,
-            6, 7, 8, 9, 10, 4, 3, 2, 1
-    };
+//    int[] points = {
+//            6, 7, 8, 9, 10, 4, 3, 2, 1,
+//            6, 7, 8, 9, 10, 4, 3, 2, 1,
+//            6, 7, 8, 9, 10, 4, 3, 2, 1,
+//            6, 7, 8, 9, 10, 4, 3, 2, 1
+//    };
+
+
 //
 //    String[] names = {
 //            "6 очков, шесть, крести",
@@ -54,33 +56,11 @@ public class Deck {
 
     String[] suit = {"крести", "треф", "буби", "пики"};
 
-    String[] card = {
-            "шесть",
-            "семь",
-            "восемь",
-            "девять",
-            "десять",
-            "король",
-            "дама",
-            "валет",
-            "туз"}
-            ;
+    String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
 
-    String getName(int id) {
-//        int point = 1;
-        int point = getPoint(id);
+    int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
 
-//        String card = "туз";
-        int indexCard = id%9;
-        String card = this.card[indexCard];
-
-//        String suit = "крести";
-        int indexSuit = id / 9;
-        String suit = this.suit[indexSuit];
-
-        String name = point + " очков, " + card + "," + suit;
-        return name;
-    }
+    private final Random rand = new Random();
 
     {
         for (int i = 0; i < 36; i++) {
@@ -88,9 +68,19 @@ public class Deck {
         }
     }
 
-    private Random rand = new Random();
+    String getName(int id) {
+        int point = getPoint(id);
+        int indexCard = id % 9;
+        String card = this.card[indexCard];
 
-    int get() {
+        int indexSuit = id / 9;
+        String suit = this.suit[indexSuit];
+
+        String name = point + " очков, " + card + "," + suit;
+        return name;
+    }
+
+    int getId() {
         while (true) {
             int i = rand.nextInt(0, 36);
             if (exists[i]) {
@@ -101,13 +91,6 @@ public class Deck {
     }
 
     int getPoint(int id) {
-        return points[id];
+        return points[id % 9];
     }
-
-//    String getName(int id) {
-////        String s = names[id];
-////        String s = getName2(id);
-//        return getName2(id);
-//    }
-
 }

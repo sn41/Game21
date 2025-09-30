@@ -10,7 +10,7 @@ public class Main {
         char s1 = ' ';
         //вытягиваем карту
         do{
-            int id = deck.get();
+            int id = deck.getId();
             sum = sum + deck.getPoint(id);
             String name = deck.getName(id);
             System.out.println(sum + "\t" + name);
@@ -24,7 +24,7 @@ public class Main {
     }
 
     private static void fun(Deck deck, int sum, Scanner input) {
-        int id = deck.get();
+        int id = deck.getId();
         sum = sum + deck.getPoint(id);
         String name = deck.getName(id);
         System.out.println(sum + "\t" + name);
