@@ -14,7 +14,9 @@ public class Main {
             sum = sum + deck.getPoint(id);
             String name = deck.getName(id);
             System.out.println(sum + "\t" + name);
+
             fun(deck, sum, input);
+
             System.out.println("Играем? У - да, N - нет");
             String s = input.nextLine();
              s1 = s.toLowerCase().trim().charAt(0);
@@ -32,9 +34,11 @@ public class Main {
         }else  if(sum == 21) {
             System.out.println("Вы выиграли!!");
         }else {
+
             System.out.println("Ещё? У - да, N - нет");
             String s = input.nextLine();
             char s1 = s.toLowerCase().trim().charAt(0);
+
             if(s1 == 'y') {
                 fun( deck, sum, input);
             }
