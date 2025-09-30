@@ -42,7 +42,7 @@ public class Deck {
         int indexSuit = id / 9;
         String suit = this.suit[indexSuit];
 
-        String name = point + " " + pointName + ", " + cardName + "," + suit;
+        String name = point + " " + pointName + ", " + cardName + ", " + suit;
 
         return name;
     }
