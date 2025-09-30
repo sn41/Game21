@@ -24,6 +24,9 @@ public class Main {
     }
 
     private static void fun(Deck deck, int sum, Scanner input) {
+
+//        deck.exists = new boolean[sum];
+
         int id = deck.getId();
         sum = sum + deck.getPoint(id);
         String name = deck.getName(id);

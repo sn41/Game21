@@ -1,9 +1,9 @@
 import java.util.Random;
 
 public class Deck {
-    boolean[] exists = new boolean[36];
+    private boolean[] exists = new boolean[36];
 
-    String getPointName(int point){
+    private String getPointName(int point){
         if(point == 1){
             return  "очко";
         }else if(point > 1 && point <5){
@@ -13,11 +13,11 @@ public class Deck {
         }
     }
 
-    String[] suit = {"крести", "треф", "буби", "пики"};
+    private static String[] suit = {"крести", "треф", "буби", "пики"};
 
-    String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
+    private static String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
 
-    int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
+    private static int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
 
     private final Random rand = new Random();
 
