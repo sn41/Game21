@@ -80,16 +80,16 @@ public class Deck {
 
     String getName(int id) {
         int point = getPoint(id);
+
         int indexCard = id % 9;
-        String card = this.card[indexCard];
+        String cardName = this.card[indexCard];
 
         String pointName = getPointName(point);
 
         int indexSuit = id / 9;
         String suit = this.suit[indexSuit];
 
-        String name = point + " " + pointName + ", " + card + "," + suit;
-//        String name = point + " очков, " + card + "," + suit;
+        String name = point + " " + pointName + ", " + cardName + "," + suit;
 
         return name;
     }
@@ -108,3 +108,31 @@ public class Deck {
         return points[id % 9];
     }
 }
+
+/*
+   void getPointName() {
+
+        Deck deck = new Deck();
+
+        String[] array = {
+                "очков",
+                "очко",
+                "очка",
+                "очка",
+                "очка",
+                "очков",
+                "очков",
+                "очков",
+                "очков",
+                "очков",
+                "очков",
+                "очков",
+                "очков"
+        };
+        for(int id = 0; id <11; id++){
+            String expected = array[id];
+            String actual = deck.getPointName(id);
+            assertEquals(expected, actual);
+        }
+    }
+ */
