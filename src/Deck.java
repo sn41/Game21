@@ -54,6 +54,16 @@ public class Deck {
 //            "1 очков, туз, пики",
 //    };
 
+    String getPointName(int point){
+        if(point == 1){
+            return  "очко";
+        }else if(point > 1 && point <5){
+            return "очка";
+        }else {
+            return "очков";
+        }
+    }
+
     String[] suit = {"крести", "треф", "буби", "пики"};
 
     String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
@@ -73,10 +83,14 @@ public class Deck {
         int indexCard = id % 9;
         String card = this.card[indexCard];
 
+        String pointName = getPointName(point);
+
         int indexSuit = id / 9;
         String suit = this.suit[indexSuit];
 
-        String name = point + " очков, " + card + "," + suit;
+        String name = point + " " + pointName + ", " + card + "," + suit;
+//        String name = point + " очков, " + card + "," + suit;
+
         return name;
     }
 
