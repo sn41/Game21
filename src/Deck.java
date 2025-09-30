@@ -1,9 +1,8 @@
 import java.util.Random;
 
 public class Deck {
-    private boolean[] exists = new boolean[36];
 
-    private String getPointName(int point){
+    private static String getPointName(int point){
         if(point == 1){
             return  "очко";
         }else if(point > 1 && point <5){
@@ -19,13 +18,18 @@ public class Deck {
 
     private static int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
 
-    private final Random rand = new Random();
+    private static final Random rand = new Random();
+
+
+
+    private boolean[] exists = new boolean[36];
 
     {
         for (int i = 0; i < 36; i++) {
             exists[i] = true;
         }
     }
+
 
     String getName(int id) {
         int point = getPoint(id);
