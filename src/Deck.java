@@ -12,17 +12,15 @@ public class Deck {
         }
     }
 
-    private static String[] suit = {"крести", "треф", "буби", "пики"};
+    private static final String[] suit = {"крести", "треф", "буби", "пики"};
 
-    private static String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
+    private static final String[] card = {"шесть", "семь", "восемь", "девять", "десять", "король", "дама", "валет", "туз"};
 
-    private static int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
+    private static final int[] points = {6, 7, 8, 9, 10, 4, 3, 2, 1};
 
     private static final Random rand = new Random();
 
-
-
-    private boolean[] exists = new boolean[36];
+    private final boolean[] exists = new boolean[36];
 
     {
         for (int i = 0; i < 36; i++) {
