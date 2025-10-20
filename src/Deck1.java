@@ -6,27 +6,21 @@ public class Deck1 {
     boolean[] exists = new boolean[36];
 
     {
-//        System.out.println("Инициализация");
         for (int i = 0; i < exists.length; i++) {
             exists[i] = true;
         }
-
 //        Arrays.fill(exits, true);
     }
 
+    private static int[] points = { 6, 7, 8, 9, 10, 4, 3, 2, 1};
 
-    private static int[] points = {
-            6,7,8,9,10,4,3,2,1
-    };    
-    
-    
-    private static String[] value = {            "6",             "7",            "8",            "9",            "10",            "король",            "валет",            "дама",            "туз",    };
+    private static String[] value = {  "6", "7", "8", "9", "10", "король", "валет", "дама", "туз"};
 
-    private static String[] suit = {            "крести",            "буби",            "пики",            "черви",    };
-
+    private static String[] suit = { "крести", "буби", "пики", "черви"};
 
     static String getName(int id){
-        return value[id % 9] + " " + suit[id % 4] + " " + getPoint(id);
+//        return value[id % 9] + " " + suit[id % 4] + " " + getPoint(id);
+        return value[id % 9] + " " + suit[id / 9] ;
     }
 
     static int getPoint(int id){
@@ -35,11 +29,11 @@ public class Deck1 {
 
     int getId() {
         while (true) {
-            int i = rand.nextInt(0, 36);
-            if (this.exists[i]) {
-                this.exists[i] = false;
-                return i;
-            }
+ int i = rand.nextInt(0, 36);
+ if (this.exists[i]) {
+     this.exists[i] = false;
+     return i;
+ }
         }
     }
     
