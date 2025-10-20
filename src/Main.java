@@ -23,26 +23,39 @@ public class Main {
 //        int point = Deck1.getName(2);
     }
 
-    private static int game(Deck1 deck1, Scanner input, String title) {
-        System.out.println(title);
-        int sum = 0;
+    static int  fun(Deck1 deck1,int sum ){
         int id1 = deck1.getId();
         sum += Deck1.getPoint(id1);
         System.out.println(Deck1.getName(id1));
+        return sum;
+    }
 
-        id1 = deck1.getId();
-        sum += Deck1.getPoint(id1);
-        System.out.println(Deck1.getName(id1));
+    private static int game(Deck1 deck1, Scanner input, String title) {
+        System.out.println(title);
+        int sum = 0;
+
+//        int id1 = deck1.getId();
+//        sum += Deck1.getPoint(id1);
+//        System.out.println(Deck1.getName(id1));
+        sum  = fun(deck1, sum);
+
+//        id1 = deck1.getId();
+//        sum += Deck1.getPoint(id1);
+//        System.out.println(Deck1.getName(id1));
+        sum  = fun(deck1, sum);
 
         while (true) {
             System.out.println();
             System.out.println("Общее = " + sum);
             System.out.println("Ещё? (Да/Нет)");
-            String answer = input.nextLine().toLowerCase();
-            if (answer.equals("да")) {
-                id1 = deck1.getId();
-                sum += Deck1.getPoint(id1);
-                System.out.println(Deck1.getName(id1));
+            char first = input.nextLine().toLowerCase().trim().charAt(0);
+            if (first == 'д') {
+
+//                id1 = deck1.getId();
+//                sum += Deck1.getPoint(id1);
+//                System.out.println(Deck1.getName(id1));
+                sum  = fun(deck1, sum);
+
                 if (sum > 20) {
                     break;
                 }

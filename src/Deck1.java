@@ -16,7 +16,7 @@ public class Deck1 {
 
     private static String[] value = {  "6", "7", "8", "9", "10", "король", "валет", "дама", "туз"};
 
-    private static String[] suit = { "крести", "буби", "пики", "черви"};
+    private static String[] suit = { "♣\uFE0F", "♠\uFE0F", "♥\uFE0F", "♦\uFE0F"};
 
     static String getName(int id){
 //        return value[id % 9] + " " + suit[id % 4] + " " + getPoint(id);
