@@ -1,5 +1,7 @@
 import java.util.Random;
 
+
+
 public class Deck {
 
     private static String getPointName(int point){
@@ -48,8 +50,8 @@ public class Deck {
     int getId() {
         while (true) {
             int i = rand.nextInt(0, 36);
-            if (exists[i]) {
-                exists[i] = false;
+            if (this.exists[i]) {
+                this.exists[i] = false;
                 return i;
             }
         }

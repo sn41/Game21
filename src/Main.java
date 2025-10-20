@@ -2,49 +2,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Объявляется
-        Deck deck = new Deck();
+        Deck1 deck1 = new Deck1();
+//        System.out.println(deck1.getName(2) + "\t" + deck1.getPoint(2));
         Scanner input = new Scanner(System.in);
-
         int sum = 0;
-        char s1 = ' ';
-        //вытягиваем карту
-        do{
-            int id = deck.getId();
-            sum = sum + deck.getPoint(id);
-            String name = deck.getName(id);
-            System.out.println(sum + "\t" + name);
+        int id1 = deck1.getId();
+        sum += Deck1.getPoint(id1);
+        System.out.println(Deck1.getName(id1));
 
-            fun(deck, sum, input);
-
-            System.out.println("Играем? У - да, N - нет");
-            String s = input.nextLine();
-             s1 = s.toLowerCase().trim().charAt(0);
-        }while (s1 == 'y') ;
-    }
-
-    private static void fun(Deck deck, int sum, Scanner input) {
-
-//        deck.exists = new boolean[sum];
-
-        int id = deck.getId();
-        sum = sum + deck.getPoint(id);
-        String name = deck.getName(id);
-        System.out.println(sum + "\t" + name);
-
-        if(sum > 21) {
-            System.out.println("Вы проиграли!!");
-        }else  if(sum == 21) {
-            System.out.println("Вы выиграли!!");
-        }else {
-
-            System.out.println("Ещё? У - да, N - нет");
-            String s = input.nextLine();
-            char s1 = s.toLowerCase().trim().charAt(0);
-
-            if(s1 == 'y') {
-                fun( deck, sum, input);
-            }
+        id1 = deck1.getId();
+        sum += Deck1.getPoint(id1);
+        System.out.println(Deck1.getName(id1));
+        System.out.println();
+        System.out.println("Общее = " + sum);
+        System.out.println("Ещё? (Да/Нет)");
+        String answer = input.nextLine().toLowerCase();
+        if (answer.equals("да")) {
+            id1 = deck1.getId();
+            sum += Deck1.getPoint(id1);
         }
+
+
+
+//        int point = Deck1.getName(2);
     }
+
 }
